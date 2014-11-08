@@ -2,7 +2,7 @@
 /**
  * Ajency Schedule and Reminder
  *
- * Wordpress plugin for scheduling and reminding certain events
+ * Wordpress plugin for scheduling and reminding anything
  *
  * @package   ajency-schedule-and-reminder
  * @author    Team Ajency <team@ajency.in>
@@ -31,9 +31,7 @@ require_once(plugin_dir_path(__FILE__) . "AjencyScheduleAndReminder.php");
 
 // Register hooks that are fired when the plugin is activated, deactivated,
 // and uninstalled, respectively.
-register_activation_hook(__FILE__,
-						array("AjencyScheduleAndReminder", "activate"));
-register_deactivation_hook(__FILE__,
-						array("AjencyScheduleAndReminder", "deactivate"));
+register_activation_hook(__FILE__, array("AjencyScheduleAndReminder", "activate"));
+register_deactivation_hook(__FILE__, array("AjencyScheduleAndReminder", "deactivate"));
 
 AjencyScheduleAndReminder::get_instance();
