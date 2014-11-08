@@ -27,6 +27,10 @@ if (!defined("WPINC")) {
 	die;
 }
 
+// include composer packages
+require_once(plugin_dir_path(__FILE__) . "composer_packages/When/Valid.php");
+require_once(plugin_dir_path(__FILE__) . "composer_packages/When/When.php");
+
 require_once(plugin_dir_path(__FILE__) . "AjencyScheduleAndReminder.php");
 
 // Register hooks that are fired when the plugin is activated, deactivated,
