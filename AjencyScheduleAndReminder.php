@@ -157,7 +157,8 @@ class AjencyScheduleAndReminder{
 		$screen = get_current_screen();
 		if ($screen->id == $this->plugin_screen_hook_suffix) {
 			wp_enqueue_style($this->plugin_slug . "-admin-styles",
-							plugins_url("css/admin.css", __FILE__), array(),
+							plugins_url("css/admin.css", __FILE__),
+							array(),
 							$this->version);
 		}
 
@@ -180,7 +181,8 @@ class AjencyScheduleAndReminder{
 		if ($screen->id == $this->plugin_screen_hook_suffix) {
 			wp_enqueue_script($this->plugin_slug . "-admin-script",
 				plugins_url("js/ajency-schedule-and-reminder-admin.js",__FILE__),
-				array("jquery"), $this->version);
+				array("jquery"),
+				$this->version);
 		}
 
 	}
@@ -215,10 +217,8 @@ class AjencyScheduleAndReminder{
 	 */
 	public function add_plugin_admin_menu() {
 		$this->plugin_screen_hook_suffix = add_plugins_page(
-			__("Ajency Schedule and Reminder - Administration",
-				$this->plugin_slug),
-			__("Ajency Schedule and Reminder",
-				$this->plugin_slug),
+			__("Ajency Schedule and Reminder - Administration", $this->plugin_slug),
+			__("Ajency Schedule and Reminder", $this->plugin_slug),
 			"read",
 			$this->plugin_slug,
 			array($this, "display_plugin_admin_page")
